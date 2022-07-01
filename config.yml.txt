@@ -1,0 +1,61 @@
+#Можно использовать аргументы: -host <хост> -port <порт> -config <файл>
+
+customServers: #список серверов на которе боты будут тоже заходить
+  - ""
+
+blacklistedServers: #список серверов на которе боты не будут вообще заходить (исключение: указанного сервера в аргументах запуска)
+  - ""
+
+monitoringList: #список сайтов, на которых бот будет брать сервера
+  - "https://monitoringminecraft.ru/novie-servera-1.12.2;class;server" #ссылка на мониторинг с нужной версией;тип;классы из которых берётся айпи
+  - "https://misterlauncher.org/servera-novye;data-toggle;tooltip" #ссылка на мониторинг с нужной версией;тип;классы из которых берётся айпи
+  - "https://tmonitoring.com/servers-new;class;ip btn-copy-html" #ссылка на мониторинг с нужной версией;тип;классы из которых берётся айпи
+  - "https://minecraft-statistic.net/ru/servers-new;class;copy-ip f-700" #ссылка на мониторинг с нужной версией;тип;классы из которых берётся айпи
+
+proxyList: #список сайтов, на которых бот будет брать прокси
+  - "https://api.proxyscrape.com/?request=displayproxies&proxytype=socks4"
+  - "https://www.proxy-list.download/api/v1/get?type=socks4"
+  - "https://openproxylist.xyz/socks4.txt"
+
+commands: #команды которые будет писать бот (доступно: wait ms, wait s, leave)
+  #- "/register ivanoffskiy8802"
+  #- "/login ivanoffskiy8802"
+  - "wait 3s"
+  - "dsc.gg/anihubs >>> ### <<< "
+  - "wait 3s"
+  - "dsc gg anihubs >>> ### <<<"
+  - "wait 3s"
+  - "Прощай. >>> ### <<<"
+  - "leave"
+
+infoFormat: 1 #стиль вывода информации (доступно: 0, 1)
+
+bots: #настройки ботов
+  joinCountToOneServer: 8 #количество ботов заходящих на один сервер за раз
+  nextServerDelay: 30 #задержка перед переходом до следующего сервера (боты не заходят это время тоже) (мс)
+  threads: 2 #количество потоков
+  doubleJoin: true #перезаходить при кике
+  botFilter: true #работать ли на бот фильтре?
+  password:
+    random: false
+    randomLength: 14
+
+duration: #длительность работы
+  enabled: false #включение/выключение
+  time: 400 #время работы (секунды)
+
+move: true #будут ли боты ходить?
+rotate: true #будут ли боты менять своё направление взгляда
+shifts: false #будут ли боты приседать
+
+proxy: #какое прокси будут у ботов
+  load: false #загружать ли прокси с файла Proxy/socks4.txt?
+
+nicks: #какие ники будут у ботов
+  random: #включить ли случайные ники?
+    enabled: true #включить/выключить случайные ники
+    prefix: "AniHubs" #префикс к никам
+
+debug: false #включить ли режим разработчика?
+bookLags: false #тестовые лаги пакетами
+keepAlivePacket: false #отправлять пакет "живой"
